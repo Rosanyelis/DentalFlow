@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" 
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" 
     data-layout="vertical" 
     data-topbar="light" 
     data-sidebar="dark" 
@@ -16,6 +16,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Sistema de Gestión Dental" name="description" />
     <meta content="Themesbrand" name="author" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{asset('assets/apple-icon-120x120.png')}}">
     <link rel="apple-touch-icon" sizes="57x57" href="{{asset('/assets/apple-icon-57x57.png')}}">
@@ -49,6 +51,8 @@
     <link href="{{asset('assets/libs/sweetalert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css" />
     
     <link href="{{asset('assets/css/styles.css')}}" rel="stylesheet" type="text/css" />
+
+    @yield('styles')
 </head>
 
 <body>
@@ -105,12 +109,7 @@
     <script src="{{asset('assets/libs/feather-icons/feather.min.js')}}"></script>
     <script src="{{asset('assets/js/pages/plugins/lord-icon-2.1.0.js')}}"></script>
     <script src="{{asset('assets/js/plugins.js')}}"></script>
-    <!-- prismjs plugin -->
-    <script src="{{asset('assets/libs/prismjs/prism.js')}}"></script>
-    <script src="{{asset('assets/libs/list.js/list.min.js')}}"></script>
-    <script src="{{asset('assets/libs/list.pagination.js/list.pagination.min.js')}}"></script>
-    <!-- listjs init -->
-    <!-- <script src="{{asset('assets/js/pages/listjs.init.js')}}"></script> -->
+    @yield('scripts')
     <!-- Sweet Alerts js -->
     <script src="{{asset('assets/libs/sweetalert2/sweetalert2.min.js')}}"></script>
 
@@ -135,6 +134,7 @@
 
         actualizarCalendario(); // Mostrar la fecha actual al cargar la página
     </script>
+    
 </body>
 
 </html>

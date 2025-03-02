@@ -6,19 +6,19 @@
                         <div class="navbar-brand-box horizontal-logo">
                             <a href="index.html" class="logo logo-dark">
                                 <span class="logo-sm">
-                                    <img src="../assets/images/logo-sm.png" alt="" height="22">
+                                    <img src="{{asset('assets/logo-text.png')}}" alt="" height="22">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="../assets/images/logo-dark.png" alt="" height="17">
+                                    <img src="{{asset('assets/logo-text.png')}}" alt="" height="17">
                                 </span>
                             </a>
 
                             <a href="index.html" class="logo logo-light">
                                 <span class="logo-sm">
-                                    <img src="../assets/images/logo-sm.png" alt="" height="22">
+                                    <img src="{{asset('assets/logo-text.png')}}" alt="" height="22">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="../assets/images/logo-light.png" alt="" height="17">
+                                    <img src="{{asset('assets/logo-text.png')}}" alt="" height="17">
                                 </span>
                             </a>
                         </div>
@@ -34,24 +34,20 @@
                         <!-- App Search-->
                         
                         <div class="app-search flex-wrap d-none d-md-block">
-                            <a href="javascript:void();" class="btn btn-ghost-primary material-shadow-none btn-ghost-secondary "
-                                style="color: gray;" 
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a href="{{ route('agenda.index') }}" class="btn btn-ghost-primary material-shadow-none btn-ghost-secondary "
+                                style="color: gray;" >
                                 Agenda
                             </a>
-                            <a href="./../pacientes.php" class="btn btn-ghost-primary material-shadow-none btn-ghost-secondary " 
-                                style="color: gray;"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a href="{{ route('pacientes.index') }}" class="btn btn-ghost-primary material-shadow-none btn-ghost-secondary " 
+                                style="color: gray;">
                                 Pacientes
                             </a>
                             <a href="javascript:void();" class="btn btn-ghost-primary material-shadow-none btn-ghost-secondary "
-                                style="color: gray;" 
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                style="color: gray;" >
                                 Cajas
                             </a>
                             <a href="javascript:void();" class="btn btn-ghost-primary material-shadow-none btn-ghost-secondary " 
-                                style="color: gray;"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                style="color: gray;">
                                 Recaudación
                             </a>
                             <a href="javascript:void();" class="btn btn-ghost-primary material-shadow-none btn-ghost-secondary dropdown-toggle"
@@ -67,16 +63,16 @@
                                         <div class="col-6">
                                             <h6>Administración</h6>
                                             <ul class="list-unstyled mb-0" aria-labelledby="dropdownMenuOffset">
-                                                <li><a class="dropdown-item" href="#">Gastos</a></li>
+                                                <li><a class="dropdown-item" href="{{ route('gastos.index') }}">Gastos</a></li>
                                                 <li><a class="dropdown-item" href="#">Inventario</a></li>
-                                                <li><a class="dropdown-item" href="#">Laboratorio</a></li>
+                                                <li><a class="dropdown-item" href="{{ route('laboratorios.index') }}">Laboratorio</a></li>
                                                 <li><a class="dropdown-item" href="#">Planes y Servicio</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-6">
                                             <h6>Configuración</h6>
                                             <ul class="list-unstyled mb-0" aria-labelledby="dropdownMenuOffset">
-                                                <li><a class="dropdown-item" href="#">Arancel de precios</a></li>
+                                                <li><a class="dropdown-item" href="{{ route('aranceles-de-precios.index') }}">Arancel de precios</a></li>
                                                 <li><a class="dropdown-item" href="#">Documentos Clínicos</a></li>
                                                 <li><a class="dropdown-item" href="#">Consentimientos informados</a></li>
                                                 <li><a class="dropdown-item" href="#">Logotipo</a></li>
@@ -100,8 +96,8 @@
                                 <i class="bx bx-category fs-22"></i>
                             </button>
                             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-search-dropdown">
-                                <a class="dropdown-item" href="javascript:void();"><i class="mdi mdi-minus text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Agenda</span></a>
-                                <a class="dropdown-item" href="javascript:void();"><i class="mdi mdi-minus text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Pacientes</span></a>
+                                <a class="dropdown-item" href="{{ route('agenda.index') }}"><i class="mdi mdi-minus text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Agenda</span></a>
+                                <a class="dropdown-item" href="{{ route('pacientes.index') }}"><i class="mdi mdi-minus text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Pacientes</span></a>
                                 <a class="dropdown-item" href="javascript:void();"><i class="mdi mdi-minus text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Cajas</span></a>
                                 <a class="dropdown-item" href="javascript:void();"><i class="mdi mdi-minus text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Recaudación</span></a>
                                 <a class="dropdown-item dropdown" href="#" id="configuraciones" data-bs-toggle="dropdown" >
@@ -110,9 +106,9 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end" aria-labelledby="configuraciones">
                                     <div class="dropdown-header"><h6>Administración</h6></div>
-                                    <a class="dropdown-item" href="javascript:void();">Gastos</a>
+                                    <a class="dropdown-item" href="{{ route('gastos.index') }}">Gastos</a>
                                     <a class="dropdown-item" href="javascript:void();">Inventario</a>
-                                    <a class="dropdown-item" href="javascript:void();">Laboratorio</a>
+                                    <a class="dropdown-item" href="{{ route('laboratorios.index') }}">Laboratorio</a>
                                     <a class="dropdown-item" href="javascript:void();">Planes y Servicio</a>
                                     <div class="dropdown-divider"></div>
                                     <div class="dropdown-header"><h6>Configuración</h6></div>
@@ -608,15 +604,15 @@
                                 <span class="d-flex align-items-center">
                                     <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg" alt="Header Avatar">
                                     <span class="text-start ms-xl-2">
-                                        <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Anna Adame</span>
+                                        <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">{{ Auth::user()->name }}</span>
                                         <span class="d-none d-xl-block ms-1 fs-12 user-name-sub-text">Founder</span>
                                     </span>
                                 </span>
                             </button>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <!-- item-->
-                                <h6 class="dropdown-header">Welcome Anna!</h6>
-                                <a class="dropdown-item" href="pages-profile.html"><i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Profile</span></a>
+                                <h6 class="dropdown-header">Welcome {{ Auth::user()->name }}!</h6>
+                                <a class="dropdown-item" href="{{ route('profile.edit') }}"><i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Perfil</span></a>
                                 <a class="dropdown-item" href="apps-chat.html"><i class="mdi mdi-message-text-outline text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Messages</span></a>
                                 <a class="dropdown-item" href="apps-tasks-kanban.html"><i class="mdi mdi-calendar-check-outline text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Taskboard</span></a>
                                 <a class="dropdown-item" href="pages-faqs.html"><i class="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Help</span></a>
@@ -624,7 +620,12 @@
                                 <a class="dropdown-item" href="pages-profile.html"><i class="mdi mdi-wallet text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Balance : <b>$5971.67</b></span></a>
                                 <a class="dropdown-item" href="pages-profile-settings.html"><span class="badge bg-success-subtle text-success mt-1 float-end">New</span><i class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Settings</span></a>
                                 <a class="dropdown-item" href="auth-lockscreen-basic.html"><i class="mdi mdi-lock text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Lock screen</span></a>
-                                <a class="dropdown-item" href="auth-logout-basic.html"><i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span class="align-middle" data-key="t-logout">Logout</span></a>
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <a class="dropdown-item" href="javascript:void(0)" onclick="event.preventDefault(); this.closest('form').submit();">
+                                        <i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> 
+                                        <span class="align-middle" data-key="t-logout">Cerrar Sesión</span></a>
+                                </form>
                             </div>
                         </div>
                     </div>

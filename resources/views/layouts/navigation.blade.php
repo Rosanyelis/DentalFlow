@@ -2,21 +2,21 @@
             <!-- LOGO -->
             <div class="navbar-brand-box">
                 <!-- Dark Logo-->
-                <a href="index.html" class="logo logo-dark">
+                <a href="{{route('dashboard')}}" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="../assets/logo-text.png" alt="" height="50">
+                        <img src="{{asset('assets/logo-text.png')}}" alt="" height="50">
                     </span>
                     <span class="logo-lg">
-                        <img src="../assets/logo-text.png" alt="" height="50">
+                        <img src="{{asset('assets/logo-text.png')}}" alt="" height="50">
                     </span>
                 </a>
                 <!-- Light Logo-->
-                <a href="index.html" class="logo logo-light">
+                <a href="{{route('dashboard')}}" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="../assets/logo-text.png" alt="" height="50">
+                        <img src="{{asset('assets/logo-text.png')}}" alt="" height="50">
                     </span>
                     <span class="logo-lg">
-                        <img src="../assets/logo-text.png" alt="" height="45">
+                        <img src="{{asset('assets/logo-text.png')}}" alt="" height="45">
                     </span>
                 </a>
                 <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
@@ -27,16 +27,19 @@
             <div class="dropdown sidebar-user m-1 rounded">
                 <button type="button" class="btn material-shadow-none" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="d-flex align-items-center gap-2">
-                        <img class="rounded header-profile-user" src="assets/images/users/avatar-1.jpg" alt="Header Avatar">
+                        <img class="rounded header-profile-user" src="{{asset('assets/images/users/avatar-1.jpg')}}" alt="Header Avatar">
                         <span class="text-start">
-                            <span class="d-block fw-medium sidebar-user-name-text">Anna Adame</span>
-                            <span class="d-block fs-14 sidebar-user-name-sub-text"><i class="ri ri-circle-fill fs-10 text-success align-baseline"></i> <span class="align-middle">Online</span></span>
+                            <span class="d-block fw-medium sidebar-user-name-text">{{ Auth::user()->name }}</span>
+                            <span class="d-block fs-14 sidebar-user-name-sub-text">
+                                <i class="ri ri-circle-fill fs-10 text-success align-baseline"></i> 
+                                <span class="align-middle">Online</span>
+                            </span>
                         </span>
                     </span>
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
                     <!-- item-->
-                    <h6 class="dropdown-header">Welcome Anna!</h6>
+                    <h6 class="dropdown-header">Welcome {{ Auth::user()->name }}!</h6>
                     <a class="dropdown-item" href="pages-profile.html"><i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Profile</span></a>
                     <a class="dropdown-item" href="apps-chat.html"><i class="mdi mdi-message-text-outline text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Messages</span></a>
                     <a class="dropdown-item" href="apps-tasks-kanban.html"><i class="mdi mdi-calendar-check-outline text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Taskboard</span></a>
@@ -50,12 +53,12 @@
             </div>
             <div id="scrollbar">
                 <div class="container-fluid">
-                    <div id="two-column-menu ">
-                        <div class="calendar-container mx-auto">
+                    <div id="two-column-menu">
+                        <div id="calendar" class="calendar-container mx-auto">
                             <span class="arrow arrow-left" onclick="cambiarFecha(-1)">&#8249;</span> 
-                            <p class="calendar-day">Viernes</p>
-                            <p class="calendar-date">14</p>
-                            <p class="calendar-month">Febrero 2025</p>
+                            <p class="calendar-day"></p>
+                            <p class="calendar-date"></p>
+                            <p class="calendar-month"></p>
                             <span class="arrow arrow-right" onclick="cambiarFecha(1)">&#8250;</span>
                         </div>
                     </div>

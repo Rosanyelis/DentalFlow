@@ -1,20 +1,20 @@
 .calendar-container {
     background-color: white;
     border-radius: 15px;
-    padding: 25px;
+    padding: 10px;
     text-align: center;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-    width: 200px;
+    width: 180px;
     position: relative;
 }
 .calendar-day {
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: 600;
     color: gray;
     margin: 0;
 }
 .calendar-date {
-    font-size: 4rem;
+    font-size: 2.3rem;
     font-weight: bold;
     color: #333;
     margin: 0;

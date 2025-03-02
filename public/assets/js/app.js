@@ -209,6 +209,7 @@ File: Main Js File
                     var isFlatpickerVal = item.attributes;
                     if (isFlatpickerVal["data-date-format"]) {
                         dateData.dateFormat = isFlatpickerVal["data-date-format"].value.toString();
+                        
                     }
                     if (isFlatpickerVal["data-enable-time"]) {
                         (dateData.enableTime = true), (dateData.dateFormat = isFlatpickerVal["data-date-format"].value.toString() + " H:i");
@@ -250,7 +251,7 @@ File: Main Js File
                         dates.push(isFlatpickerVal["data-week-number"].value);
                         dateData.weekNumbers = true
                     }
-                    flatpickr(item, dateData);
+                    flatpickr(item, dateData, isFlatpickerVal["data-locale"].value.toString());
                 } else if (item.getAttribute("data-provider") == "timepickr") {
                     var timeData = {};
                     var isTimepickerVal = item.attributes;
@@ -773,15 +774,20 @@ File: Main Js File
 
         //For collapse vertical menu
         if (document.documentElement.getAttribute("data-layout") === "vertical") {
+            var calendar = document.getElementById('calendar');
             if (windowSize < 1025 && windowSize > 767) {
                 document.body.classList.remove("vertical-sidebar-enable");
                 document.documentElement.getAttribute("data-sidebar-size") == "sm" ? document.documentElement.setAttribute("data-sidebar-size", "") : document.documentElement.setAttribute("data-sidebar-size", "sm");
+                document.documentElement.getAttribute("data-sidebar-size") == "sm" ? calendar.classList.add('d-none') : calendar.classList.remove('d-none');
+                
             } else if (windowSize > 1025) {
                 document.body.classList.remove("vertical-sidebar-enable");
                 document.documentElement.getAttribute("data-sidebar-size") == "lg" ? document.documentElement.setAttribute("data-sidebar-size", "sm") : document.documentElement.setAttribute("data-sidebar-size", "lg");
+                document.documentElement.getAttribute("data-sidebar-size") == "sm" ? calendar.classList.add('d-none') : calendar.classList.remove('d-none');
             } else if (windowSize <= 767) {
                 document.body.classList.add("vertical-sidebar-enable");
                 document.documentElement.setAttribute("data-sidebar-size", "lg");
+                calendar.classList.remove('d-none');
             }
         }
 
